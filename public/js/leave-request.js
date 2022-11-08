@@ -24,5 +24,4 @@ const newLeaveRequest = async (event) => {
 
 // Add event listener to create new leave request
 document // need to confirm this is the correct element
-  .querySelector('.new-leave-request-form')
-  .addEventListener('submit', newLeaveRequest);
+  .querySelector('.new-leave-request-form').addEventListener('submit', newLeaveRequest);

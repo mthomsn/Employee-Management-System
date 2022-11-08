@@ -1,6 +1,7 @@
 <header class="text-center"><h2>Process Leave Request</h2></header>
 <section class="container-fluid my-3">
    <h5>Apply Leave</h5>
+   <form class="new-leave-request-form">
    <div class="input-group my-3">
       <div class="input-group-prepend">
          <label class="input-group-text" for="inputGroupSelect01">Employee ID</label>
@@ -52,11 +53,13 @@
       </div>
       <textarea class="form-control" aria-label="With textarea"></textarea>
     </div>
-
 </section>
 <section class="container-fluid">
    <div class="action-button-container my-5" style="width: 800px;">
-      <button type="button" class="btn btn-success" id="apply-leave-button">Apply Leave</button>
+      <button type="button" class="btn btn-success" id="new-leave-request-button">Apply Leave</button>
       <button type="button" class="btn btn" id="reset-form-button">Reset</button>
    </div>
 </section>
+</form>
+
+<script>"../public/js/leave-request.js"</script>
