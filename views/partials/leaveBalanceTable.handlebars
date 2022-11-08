@@ -1,6 +1,5 @@
 <div class="card">
    <div class="card-body">
-      This is some text within a card body.
       <h1>Employees Time Off Balance</h1>
       <div class="row">
          <table>
@@ -13,6 +12,7 @@
                </tr>
             </thead>
             <tbody>
+               {{#if employees}}
                {{#each employees}}
                <tr>
                   <td>{{id}}</td>
@@ -23,6 +23,7 @@
                {{else}}
                <p>No employees to display</p>
                {{/each}}
+               {{/if}}
             </tbody>
          </table>
       </div>
