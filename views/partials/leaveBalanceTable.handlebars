@@ -1,0 +1,30 @@
+<div class="card">
+   <div class="card-body">
+      This is some text within a card body.
+      <h1>Employees Time Off Balance</h1>
+      <div class="row">
+         <table>
+            <thead>
+               <tr>
+                  <th>Employee ID</th>
+                  <th>Name</th>
+                  <th>Department</th>
+                  <th>Time Off Balance</th>
+               </tr>
+            </thead>
+            <tbody>
+               {{#each employee}}
+               <tr>
+                  <td>{{id}}</td>
+                  <td>{{name}}</td>
+                  <td>{{department}}</td>
+                  <td>{{Leave.leave_balance}}</td>
+               </tr>
+               {{else}}
+               <p>No employees to display</p>
+               {{/each}}
+            </tbody>
+         </table>
+      </div>
+   </div>
+</div>

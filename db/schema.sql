@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS ems_db;
+
+CREATE DATABASE ems_db;
