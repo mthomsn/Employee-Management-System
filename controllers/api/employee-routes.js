@@ -81,6 +81,26 @@ router.put('/:id', async (req, res) => { // URL is /api/employee/:id
   }
 });
 
+// POST new employee
+router.post('/new', async (req, res) => { // URL is /api/employee/new
+  // create a new employee using Employee model
+  try {
+    const employeeData = await Employee.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      start_date: req.body.start_date,
+      salary: req.body.salary,
+      role_id: req.body.role_id,
+      title: req.body.title,
+      currently_employed: true,
+    });
+    res.status(200).json(employeeData);
+  }
+  catch(err) {
+    res.status(400).json(err);
+  }
+});
+
 // DELETE employee
 // Possibly just archive employee instead?
 router.delete('/:id', async (req, res) => { // URL is /api/employee/:id
