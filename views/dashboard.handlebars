@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Creating Dynamic Tabs in Bootstrap via Data attributes</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="m-4">
+    <ul class="nav nav-tabs" id="myTab">
+        <li class="nav-item">
+            <a href="#home" class="nav-link active" data-bs-toggle="tab">Home</a>
+        </li>
+        <li class="nav-item">
+            <a href="#employee-list" class="nav-link" data-bs-toggle="tab">Employees</a>
+        </li>
+        <li class="nav-item">
+            <a href="#process-leave" class="nav-link" data-bs-toggle="tab">Leave Form</a>
+        </li>
+           <li class="nav-item">
+            <button id="logout" class="nav-link">Logout</button>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade show active" id="home">
+            <h4 class="mt-2">Welcome to the Manager dashboard, {{ User.username }}!</h4>
+            {{> leaveBalanceTable }}
+        </div>
+        <div class="tab-pane fade" id="employee-list">
+            <h4 class="mt-2">All Employees</h4>
+            {{> allEmployees}}
+        </div>
+        <div class="tab-pane fade" id="process-leave">
+            <h4 class="mt-2">Leave Request</h4>
+            {{> leaveRequest}}
+        </div>
+    </div>
+</div>
