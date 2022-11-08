@@ -26,7 +26,6 @@ Employee.init(
     end_date: {
         type: DataTypes.DATE,
         allowNull: true,
-       
       },
     currently_employed: {
       type: DataTypes.BOOLEAN,
