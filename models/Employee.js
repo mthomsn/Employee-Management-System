@@ -34,10 +34,10 @@ Employee.init(
     salary: {
         type: DataTypes.DECIMAL,
         allowNull: false,
-        references: {
-          model: 'roles',
-          key: 'salary',
-        }
+        // references: {
+        //   model: 'roles',
+        //   key: 'id',
+        // }
     },
     role_id: {
       type: DataTypes.STRING,
