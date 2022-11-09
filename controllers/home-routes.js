@@ -53,5 +53,3 @@ router.get('/', async (req, res) => { // URL is /
 });
 
 module.exports = router;
-
-
