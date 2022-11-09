@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Employee, Leave, Roles} = require('../models/');
+
+// IMPORT MODELS
+const { Employee, Role, Leave } = require('../models');
 
 // GET login page
 router.get('/login', (req, res) => { // URL is /login
@@ -16,6 +18,7 @@ router.get('/', async (req, res) => { // URL is /
   // 1. All employees
   // 2. All roles
   // 3. All leave balances
+
 
   // try {
   //   const employeeData = await Employee.findAll({
@@ -39,6 +42,8 @@ router.get('/', async (req, res) => { // URL is /
   //   const leaves = leaveData.map((leave) => leave.get({ plain: true }));
 
     {res.render('login', { // Get with Mark/Sarah to confirm template info
+
+
       loggedIn: req.session.loggedIn,
     });
   }
@@ -47,4 +52,7 @@ router.get('/', async (req, res) => { // URL is /
   }
 });
 
-module.exports = router
+
+module.exports = router;
+
+
