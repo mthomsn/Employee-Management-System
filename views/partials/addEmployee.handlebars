@@ -4,6 +4,7 @@
       <div class="input-group-prepend">
          <span class="input-group-text" id="inputGroup-sizing-default">Employee ID</span>
       </div>
+   <form class="add-employee">
       <input type="text" class="form-control" id="employee-id" aria-label="Default"
          aria-describedby="inputGroup-sizing-default">
    </div>
@@ -26,7 +27,7 @@
          <label class="input-group-text" for="inputGroupSelect01">Employee Role</label>
       </div>
       <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>
+         <option selected id="employee-role">Choose...</option>
          <option value="1" id="">Senior Staff Engineer</option>
          <option value="2" id="">Senior Engineer</option>
          <option value="3" id="">Mid-level Engineer</option>
@@ -41,7 +42,7 @@
             <label class="input-group-text mb-1" for="inputGroupSelect01">Employee Start Date</label>
          </div>
          <span class="glyphicon glyphicon-th">
-            <input id="datepickerfrom" name="datepickerfrom" width="450" type="date" required />
+            <input id="start-date" name="datepickerfrom" width="450" type="date" required />
          </span>
       </div>
    </div>
@@ -52,4 +53,6 @@
       <button type="button" class="btn btn-dark" id="save-employee-button">Save Employee Data</button>
       <button type="button" class="btn btn-danger" id="delete-employee-button">Delete Employee</button>
    </div>
+</form>
 </section>
+<script href="./js/add-employee.js"></script>

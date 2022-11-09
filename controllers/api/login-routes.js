@@ -47,6 +47,4 @@ router.post('/exit', (req, res) => { // URL is /api/login/exit
   }
 });
 
-
-
 module.exports = router;
