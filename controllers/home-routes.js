@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
 // IMPORT MODELS
-const { Employee, Role, Leave } = require('../models');
+const { Employee, Role, Leave, User } = require('../models');
 
 // GET login page
 router.get('/login', (req, res) => { // URL is /login
@@ -20,7 +20,7 @@ router.get('/', async (req, res) => { // URL is /
   // 3. All leave balances
 
 
-  // try {
+  try {
   //   const employeeData = await Employee.findAll({
   //     include: [
   //       {
@@ -41,7 +41,7 @@ router.get('/', async (req, res) => { // URL is /
   //   const leaveData = await Leave.findAll(); // Do we need to pull in the leave data?
   //   const leaves = leaveData.map((leave) => leave.get({ plain: true }));
 
-    {res.render('login', { // Get with Mark/Sarah to confirm template info
+    res.render('login', { // Get with Mark/Sarah to confirm template info
 
 
       loggedIn: req.session.loggedIn,
@@ -51,7 +51,6 @@ router.get('/', async (req, res) => { // URL is /
     res.status(500).json(err);
   }
 });
-
 
 module.exports = router;
 
