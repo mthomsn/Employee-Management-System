@@ -17,7 +17,6 @@ Leave.belongsTo(Employee, {
  
  Roles.hasMany(Employee, {
   foreignKey: 'employee_id'
- });
+ }); 
 
-module.exports = {Employee, Roles, Leave}
- 
+module.exports = { Employee, Roles, Leave };
