@@ -2,8 +2,6 @@ const Employee = require('./Employee');
 const Roles = require ('./Roles')
 const Leave = require('./Leave');
 
-module.exports = { User }, { Entry }
-
 Employee.hasMany(Leave, {
    foreignKey: 'employee_id',
    onDelete: 'CASCADE'
@@ -14,13 +12,12 @@ Leave.belongsTo(Employee, {
  });
 
  Employee.hasOne(Roles, {
-  foreignKey: 'role_id'
+  foreignKey: 'id'
  }); 
  
  Roles.hasMany(Employee, {
-  foreignKey: 'role_id'
+  foreignKey: 'employee_id'
  });
 
- 
- module.exports = { User, Entry };
+module.exports = {Employee, Roles, Leave}
  

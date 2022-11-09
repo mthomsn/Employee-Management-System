@@ -143,3 +143,4 @@ router.post('/leave', async (req, res) => { // URL is /api/employee/leave
     res.status(400).json(err);
   }
 });
+module.exports = router

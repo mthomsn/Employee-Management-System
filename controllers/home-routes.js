@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// IMPORT MODELS
+const { Employee, Leave, Roles} = require('../models/');
 
 // GET login page
 router.get('/login', (req, res) => { // URL is /login
@@ -40,8 +40,6 @@ router.get('/', async (req, res) => { // URL is /
 
     res.render('homepage', { // Get with Mark/Sarah to confirm template info
       employees,
-      roles,
-      leaves,
       loggedIn: req.session.loggedIn,
     });
   }
@@ -49,3 +47,5 @@ router.get('/', async (req, res) => { // URL is /
     res.status(500).json(err);
   }
 });
+
+module.exports = router
