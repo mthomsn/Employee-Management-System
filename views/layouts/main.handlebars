@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMS</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="flex-column min-100-vh">
+  <nav class="navbar">
+    <ul>
+      <li class="li-inline nav-item"><a href="/">Home</a></li>
+      {{#if logged_in}}
+      <li class="li-inline nav-item"><a href="/dashboard">Dashboard</a></li>
+      <li class="li-inline nav-item"><a href="/logout">Logout</a></li>
+      {{else}}
+      <li class="li-inline nav-item"><a href="/login">Login</a></li>
+      {{/if}}
+    </ul>
+  </nav>
+<header class="hero">
+    <h1 class="app-title"><a href="/">MIMS Employee Management System</a></h1>
+</header>
+
+  <main class="col-auto">
+    {{{body}}}
+  </main>
+
+  <footer class="flex-row justify-center">
+    &copy; MIMS Employee Managment Systems
+    Created By: 
+    <a href="https://github.com/mthomsn">Matt Thomsen</a>
+    <a href="https://github.com/Ikeapedia">Ikechukwu Nwachukwu</a>
+    <a href="https://github.com/Bermejo246">Mark Bermejo</a>
+    <a href="https://github.com/sarahthoorens">Sarah Thoorens</a>
+  </footer>
+</body>
+
+</html>
+<script src="/js/logout.js"></script>

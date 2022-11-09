@@ -2,7 +2,6 @@
 <html>    
 <head>    
     <title>Login Form</title>    
-    <link rel="stylesheet" href="styles.css" type="text/css">
 </head>    
 <body>    
     <h2>Management Login</h2><br>    
@@ -11,12 +10,12 @@
         <label><b>User Name     
         </b>    
         </label>    
-        <input type="text" name="Uname" id="Uname" placeholder="Username">    
+        <input type="text" name="Uname" id="username_login" placeholder="Username">    
         <br><br>    
         <label><b>Password     
         </b>    
         </label>    
-        <input type="Password" name="Pass" id="Pass" placeholder="Password">    
+        <input type="Password" name="Pass" id="password_login" placeholder="Password">    
         <br><br>    
         <input type="button" name="log" id="log" value="Log In Here">       
         <br><br>    
@@ -25,6 +24,28 @@
         <br><br>    
         <a href="#"> Forgot Password</a>    
     </form>     
+
+
+  <form class="form signup-form">
+      <div class="form-group">
+        <label for="name-signup">name:</label>
+        <input class="form-input" type="text" id="name-signup" />
+      </div>
+      <div class="form-group">
+        <label for="email-signup">email:</label>
+        <input class="form-input" type="text" id="email-signup" />
+      </div>
+      <div class="form-group">
+        <label for="password-signup">password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" type="submit">signup</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 </div>    
 </body>    
 </html>
