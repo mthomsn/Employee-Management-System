@@ -1,5 +1,7 @@
 const router = require('express').Router();
-const { Employee, Leave, Roles} = require('../models/');
+
+// IMPORT MODELS
+const { Employee, Role, Leave } = require('../models');
 
 // GET login page
 router.get('/login', (req, res) => { // URL is /login
@@ -18,28 +20,31 @@ router.get('/', async (req, res) => { // URL is /
   // 3. All leave balances
 
   try {
-    const employeeData = await Employee.findAll({
-      include: [
-        {
-          model: Roles,
-          attributes: ['role_name'],
-        },
-        {
-          model: Leave,
-          attributes: ['leave_balance'],
-        },
-      ],
-    });
-    const employees = employeeData.map((employee) => employee.get({ plain: true }));
+    // const employeeData = await Employee.findAll({
+    //   include: [
+    //     {
+    //       model: Roles,
+    //       attributes: ['role_name'],
+    //     },
+    //     {
+    //       model: Leave,
+    //       attributes: ['leave_balance'],
+    //     },
+    //   ],
+    // });
+    // const employees = employeeData.map((employee) => employee.get({ plain: true }));
 
-    const roleData = await Role.findAll(); // Do we need to pull in the role data?
-    const roles = roleData.map((role) => role.get({ plain: true }));
+    // const roleData = await Role.findAll(); // Do we need to pull in the role data?
+    // const roles = roleData.map((role) => role.get({ plain: true }));
 
-    const leaveData = await Leave.findAll(); // Do we need to pull in the leave data?
-    const leaves = leaveData.map((leave) => leave.get({ plain: true }));
+    // const leaveData = await Leave.findAll(); // Do we need to pull in the leave data?
+    // const leaves = leaveData.map((leave) => leave.get({ plain: true }));
 
     res.render('homepage', { // Get with Mark/Sarah to confirm template info
-      employees,
+
+      // employees,
+      // roles,
+      // leaves,
       loggedIn: req.session.loggedIn,
     });
   }
@@ -48,4 +53,7 @@ router.get('/', async (req, res) => { // URL is /
   }
 });
 
-module.exports = router
+
+module.exports = router;
+
+

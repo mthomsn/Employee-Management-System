@@ -3,6 +3,7 @@ const newLeaveRequest = async (event) => {
   event.preventDefault();
 
   const employeeID = document.querySelector('#employeeId').value.trim();
+
   const leave_type = document.querySelector('#leave-type').value.trim();
   const start_date = document.querySelector('#start-date').value.trim();
   const end_date = document.querySelector('#end-date').value.trim();
