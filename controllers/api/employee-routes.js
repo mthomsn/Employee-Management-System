@@ -23,7 +23,7 @@ router.get('/', async (req, res) => { // URL is /api/employee
     const employees = employeeData.map((employee) => employee.get({ plain: true }));
 
     // Send employee info to homepage template
-    res.render('homepage', { 
+    res.render('dashboard', { 
       employees,
       loggedIn: req.session.loggedIn,
     });
@@ -34,7 +34,7 @@ router.get('/', async (req, res) => { // URL is /api/employee
 });
 
 // GET employee by id
-router.get('/:id', async (req, res) => { // URL is /api/employee/:id
+router.get('employee/:id', async (req, res) => { // URL is /api/employee/:id
   try {
     const employeeData = await Employee.findByPk(req.params.id, {
       include: [
@@ -61,7 +61,7 @@ router.get('/:id', async (req, res) => { // URL is /api/employee/:id
 });
 
 // PUT update employee
-router.put('/:id', async (req, res) => { // URL is /api/employee/:id
+router.put('employee/edit/:id', async (req, res) => { // URL is /api/employee/:id
   try {
     const employeeData = await Employee.update(req.body, {
       where: {
@@ -103,7 +103,7 @@ router.post('/new', async (req, res) => { // URL is /api/employee/new
 
 // DELETE employee
 // Possibly just archive employee instead?
-router.delete('/:id', async (req, res) => { // URL is /api/employee/:id
+router.delete('/employee/edit/:id', async (req, res) => { // URL is /api/employee/:id
   try {
     // Archive employee
     const employeeArchive = await Employee.findByPk(req.params.id);

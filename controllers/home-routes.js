@@ -17,29 +17,28 @@ router.get('/', async (req, res) => { // URL is /
   // 2. All roles
   // 3. All leave balances
 
-  try {
-    const employeeData = await Employee.findAll({
-      include: [
-        {
-          model: Roles,
-          attributes: ['role_name'],
-        },
-        {
-          model: Leave,
-          attributes: ['leave_balance'],
-        },
-      ],
-    });
-    const employees = employeeData.map((employee) => employee.get({ plain: true }));
+  // try {
+  //   const employeeData = await Employee.findAll({
+  //     include: [
+  //       {
+  //         model: Roles,
 
-    const roleData = await Role.findAll(); // Do we need to pull in the role data?
-    const roles = roleData.map((role) => role.get({ plain: true }));
+  //       },
+  //       {
+  //         model: Leave,
 
-    const leaveData = await Leave.findAll(); // Do we need to pull in the leave data?
-    const leaves = leaveData.map((leave) => leave.get({ plain: true }));
+  //       },
+  //     ],
+  //   });
+  //   const employees = employeeData.map((employee) => employee.get({ plain: true }));
 
-    res.render('homepage', { // Get with Mark/Sarah to confirm template info
-      employees,
+  //   const roleData = await Roles.findAll(); // Do we need to pull in the role data?
+  //   const roles = roleData.map((roles) => roles.get({ plain: true }));
+
+  //   const leaveData = await Leave.findAll(); // Do we need to pull in the leave data?
+  //   const leaves = leaveData.map((leave) => leave.get({ plain: true }));
+
+    {res.render('login', { // Get with Mark/Sarah to confirm template info
       loggedIn: req.session.loggedIn,
     });
   }

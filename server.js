@@ -3,6 +3,8 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const helpers = require('./utils/helpers');
+const routes = require('./controllers');
+
 
 const sequelize = require('./config/connection');
 // Create a new sequelize store using the express-session package
@@ -33,7 +35,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-const routes = require('./controllers');
+app.use(routes)
 
 app.listen(PORT, () => {
   console.log(`App listening on port ${PORT}!`);
