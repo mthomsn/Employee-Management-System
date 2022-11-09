@@ -1,4 +1,5 @@
 const router = require('express').Router();
+// IMPORT MODELS
 const { Employee, Roles, Leave } = require('../../models');
 
 // current URL is /api/login
@@ -44,6 +45,22 @@ router.post('/exit', (req, res) => { // URL is /api/login/exit
     });
   } else {
     res.status(404).end();
+  }
+});
+
+// POST user signup
+router.post('/signup', async (req, res) => { // URL is /api/login/signup
+  try {
+    const userData = await User.create(req.body);
+
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.loggedIn = true;
+
+      res.status(200).json(userData);
+    });
+  } catch (err) {
+    res.status(400).json(err);
   }
 });
 

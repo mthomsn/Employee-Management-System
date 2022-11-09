@@ -5,7 +5,7 @@ const { Employee, Leave } = require('../../models');
 
 
 // get employees to display in leave balance table on dashboard
-router.get('/', async (req, res) => {
+router.get('/', async (req, res) => { // URL is /api/dashboard
    try {
      const employeeData = await Employee.findAll({
       include: [Leave]
@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
  
      const employees = employeeData.map((employee) => employee.get({ plain: true }));
  
-     res.render('leaveBalanceTable', {
-       layout: 'dashboard',
+     res.render('dashboard', {
+      //  layout: 'dashboard',
        employees,
      });
    } catch (err) {
