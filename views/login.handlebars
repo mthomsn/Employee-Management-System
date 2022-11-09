@@ -6,7 +6,7 @@
 <body>    
     <h2>Management Login</h2><br>    
     <div class="login">    
-    <form id="login" method="get" action="login.php">    
+      <form id="login" class="login-form" method="get">    
         <label><b>User Name     
         </b>    
         </label>    
@@ -23,12 +23,12 @@
         <span>Remember me</span>    
         <br><br>    
         <a href="#"> Forgot Password</a>    
-    </form>     
+      </form>     
 
-  <form class="form signup-form">
+    <form class="form signup-form">
       <div class="form-group">
         <label for="name-signup">name:</label>
-        <input class="form-input" type="text" id="name-signup" />
+        <input class="form-input" type="text" id="username-signup" />
       </div>
       <div class="form-group">
         <label for="email-signup">email:</label>
@@ -39,7 +39,7 @@
         <input class="form-input" type="password" id="password-signup" />
       </div>
       <div class="form-group">
-        <button class="btn btn-primary" type="submit">signup</button>
+        <button class="btn btn-primary" id="signup-btn" type="submit">signup</button>
       </div>
     </form>
   </div>
@@ -47,5 +47,5 @@
 
 </div>    
 </body>  
-<script href="/js/login.js"></script>  
+<script href="../public/js/login.js"></script>  
 </html>

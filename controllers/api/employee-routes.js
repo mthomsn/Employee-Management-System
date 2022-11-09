@@ -22,8 +22,8 @@ router.get('/', async (req, res) => { // URL is /api/employee
     // Serialize data so the template can read it
     const employees = employeeData.map((employee) => employee.get({ plain: true }));
 
-    // Send employee info to homepage template
-    res.render('dashboard', { 
+    // Send employee info to dasboard
+    res.render('allEmployees', { 
       employees,
       loggedIn: req.session.loggedIn,
     });
@@ -61,7 +61,7 @@ router.get('employee/:id', async (req, res) => { // URL is /api/employee/:id
 });
 
 // PUT update employee
-router.put('employee/edit/:id', async (req, res) => { // URL is /api/employee/:id
+router.put('/:id', async (req, res) => { // URL is /api/employee/:id
   try {
     const employeeData = await Employee.update(req.body, {
       where: {
@@ -82,7 +82,7 @@ router.put('employee/edit/:id', async (req, res) => { // URL is /api/employee/:i
 });
 
 // POST new employee
-router.post('/new', async (req, res) => { // URL is /api/employee/new
+router.post('/add', async (req, res) => { // URL is /api/employee/add
   // create a new employee using Employee model
   try {
     const employeeData = await Employee.create({

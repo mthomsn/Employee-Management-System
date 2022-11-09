@@ -13,6 +13,7 @@
         <li class="nav-item">
             <a href="#home" class="nav-link active" data-bs-toggle="tab">Home</a>
         </li>
+           {{#if logged_in}}
         <li class="nav-item">
             <a href="#employee-list" class="nav-link" data-bs-toggle="tab">Employees</a>
         </li>
@@ -20,8 +21,14 @@
             <a href="#process-leave" class="nav-link" data-bs-toggle="tab">Leave Form</a>
         </li>
            <li class="nav-item">
-            <button id="logout" class="nav-link">Logout</button>
+             <a href="/logout/exit" class="nav-link">Log Out</a>
         </li>
+        {{else}}
+           </li>
+           <li class="nav-item">
+            <a href="/login" class="nav-link">Log In</a>
+        </li>
+        {{/if}}
     </ul>
     <div class="tab-content">
         <div class="tab-pane fade show active" id="home">

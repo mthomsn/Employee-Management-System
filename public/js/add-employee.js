@@ -1,15 +1,21 @@
 const newFormHandler = async (event) => {
    event.preventDefault();
  
-   const employeeName = document.querySelector('#employee-name').value.trim();
+   const employeeFirstName = document.querySelector('#employee-first-name').value.trim();
+   const employeeLastName = document.querySelector('#employee-last-name').value.trim();
    const employeeSalary = document.querySelector('#employee-salary').value.trim();
    const employeeRole = document.querySelector('#employee-role').value.trim();
    const startDate = document.querySelector('#start-date').value.trim();
 
-   if (name && needed_funding && description) {
+   if (employeeFirstName && employeeLastName && employeeSalary && employeeRole) {
      const response = await fetch(`/api/employee/edit/:id`, {
        method: 'POST',
-       body: JSON.stringify({ employeeName, employeeSalary, employeeRole, startDate }),
+       body: JSON.stringify({ 
+         employeeFirstName, 
+         employeeLastName, 
+         employeeSalary, 
+         employeeRole, 
+         startDate }),
        headers: {
          'Content-Type': 'application/json',
        },
@@ -18,7 +24,7 @@ const newFormHandler = async (event) => {
      if (response.ok) {
        document.location.replace('/dashboard');
      } else {
-       alert('Failed to edit employee');
+       alert('Failed to add employee');
      }
    }
  };
