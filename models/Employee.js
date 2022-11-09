@@ -31,30 +31,6 @@ Employee.init(
       type: DataTypes.BOOLEAN,
       allowNull: false,
       },
-    salary: {
-        type: DataTypes.DECIMAL,
-        allowNull: false,
-        // references: {
-        //   model: 'roles',
-        //   key: 'id',
-        // }
-    },
-    role_id: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: 'roles',
-        key: 'id',
-      }
-    },
-    title: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      references: {
-        model: 'roles',
-        key: 'title',
-      }
-    },
   },
   {
     sequelize,

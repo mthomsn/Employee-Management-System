@@ -57,7 +57,7 @@
     "safe-buffer": "^5.2.1",
     "safer-buffer": "^2.1.2",
     "send": "^0.18.0",
-    "sequelize": "^6.25.4",
+    "sequelize": "^6.25.5",
     "serve-static": "^1.15.0",
     "session": "^0.1.0",
     "setprototypeof": "^1.2.0",

@@ -1,4 +1,5 @@
 const router = require('express').Router();
+
 // IMPORT MODELS
 const { Employee, Role, Leave } = require('../models');
 
@@ -40,6 +41,7 @@ router.get('/', async (req, res) => { // URL is /
     // const leaves = leaveData.map((leave) => leave.get({ plain: true }));
 
     res.render('homepage', { // Get with Mark/Sarah to confirm template info
+
       // employees,
       // roles,
       // leaves,
@@ -51,4 +53,7 @@ router.get('/', async (req, res) => { // URL is /
   }
 });
 
+
 module.exports = router;
+
+

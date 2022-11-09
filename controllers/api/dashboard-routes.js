@@ -1,9 +1,11 @@
 const router = require('express').Router();
 const { Employee, Leave } = require('../../models');
-const withAuth = require('../../utils/helpers');
+
+// const withAuth = require('../utils/auth');
+
 
 // get employees to display in leave balance table on dashboard
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
    try {
      const employeeData = await Employee.findAll({
       include: [Leave]
@@ -19,5 +21,6 @@ router.get('/', withAuth, async (req, res) => {
      res.redirect('login');
    }
  });
+
 
  module.exports = router;

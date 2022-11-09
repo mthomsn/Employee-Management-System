@@ -1,5 +1,4 @@
 const router = require('express').Router();
-// IMPORT MODELS
 const { Employee, Roles, Leave } = require('../../models');
 
 // current URL is /api/login
