@@ -9,12 +9,22 @@
     --border-radius: 0.3rem;
 }
 
+.navbar {
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+}
+
 body {
     margin: 0;
     padding: 0;
     background-color: var(--secondary);
     font-family: 'Arial';
 }
+
+
 
 footer {
     position: absolute;
