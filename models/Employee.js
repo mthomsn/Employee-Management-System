@@ -11,26 +11,22 @@ Employee.init(
         allowNull: false,
         autoIncrement: true
       },
-    first_name: {
+    name: {
          type: DataTypes.STRING,
          allowNull: false,
-       },
-    last_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
     },
     start_date: {
-        type: DataTypes.DATE,
+        type: DataTypes.STRING,
         allowNull: true
       },
-    end_date: {
-        type: DataTypes.DATE,
-        allowNull: true,
-      },
-    currently_employed: {
-      type: DataTypes.BOOLEAN,
-      allowNull: false,
-      },
+    // end_date: {
+    //     type: DataTypes.DATE,
+    //     allowNull: true,
+    //   },
+    // currently_employed: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false,
+    //   },
     role_id: {
         type: DataTypes.INTEGER,
         allowNull: false,
