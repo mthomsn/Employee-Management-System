@@ -20,8 +20,11 @@
         <li class="nav-item">
             <a href="#process-leave" class="nav-link" data-bs-toggle="tab">Leave Form</a>
         </li>
-           <li class="nav-item">
-             <a href="/logout/exit" class="nav-link">Log Out</a>
+         <li class="nav-item">
+            <a href="#employee-add" class="nav-link" data-bs-toggle="tab">Add Employee</a>
+        </li>
+        <li class="nav-item">
+            <a href="/logout/exit" class="nav-link">Log Out</a>
         </li>
         {{else}}
            </li>
@@ -30,6 +33,7 @@
         </li>
         {{/if}}
     </ul>
+</div>
     <div class="tab-content">
         <div class="tab-pane fade show active" id="home">
             <h4 class="mt-2">Welcome to the Manager dashboard, {{ User.username }}!</h4>
@@ -43,5 +47,8 @@
             <h4 class="mt-2">Leave Request</h4>
             {{> leaveRequest}}
         </div>
+          <div class="tab-pane fade" id="employee-add">
+            <h4 class="mt-2">Add Employee</h4>
+            {{> addEmployee}}
+        </div>
     </div>
-</div>

@@ -21,7 +21,7 @@ Employee.init(
     },
     start_date: {
         type: DataTypes.DATE,
-        allowNull: false,
+        allowNull: true
       },
     end_date: {
         type: DataTypes.DATE,
@@ -30,6 +30,14 @@ Employee.init(
     currently_employed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
+      },
+    role_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'roles',
+          key: 'id',
+       }
       },
   },
   {

@@ -1,18 +1,16 @@
 const newFormHandler = async (event) => {
    event.preventDefault();
  
-   const employeeFirstName = document.querySelector('#employee-first-name').value.trim();
-   const employeeLastName = document.querySelector('#employee-last-name').value.trim();
+   const employeeName = document.querySelector('#employee-name').value.trim();
    const employeeSalary = document.querySelector('#employee-salary').value.trim();
    const employeeRole = document.querySelector('#employee-role').value.trim();
    const startDate = document.querySelector('#start-date').value.trim();
 
-   if (employeeFirstName && employeeLastName && employeeSalary && employeeRole) {
-     const response = await fetch(`/api/employee/edit/:id`, {
+   if (employeeName && employeeSalary && employeeRole) {
+     const response = await fetch('', {
        method: 'POST',
        body: JSON.stringify({ 
-         employeeFirstName, 
-         employeeLastName, 
+         employeeName, 
          employeeSalary, 
          employeeRole, 
          startDate }),
@@ -46,7 +44,7 @@ const newFormHandler = async (event) => {
  };
  
  document
-   .querySelector('#save-employee-button') .addEventListener('click', newFormHandler);
+   .querySelector('#save-employee-button').addEventListener('click', newFormHandler);
  
  document
    .querySelector('#delete-employee-button').addEventListener('click', delButtonHandler);
