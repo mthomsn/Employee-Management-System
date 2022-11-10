@@ -1,7 +1,18 @@
+:root {
+    --primary: blue;
+    --secondary: whitesmoke;
+    --tertiary: gray;
+    --quantrinary: #5e877f;
+    --light: white;
+    --dark: black;
+    --error: red;
+    --border-radius: 0.3rem;
+}
+
 body {
     margin: 0;
     padding: 0;
-    background-color: whitesmoke;
+    background-color: var(--secondary);
     font-family: 'Arial';
 }
 
@@ -11,19 +22,19 @@ body {
     margin: auto;
     margin: 20 0 0 450px;
     padding: 80px;
-    background: black;
+    background: var(--dark);
     border-radius: 15px;
 
 }
 
 h2 {
     text-align: center;
-    color: blue;
+    color: var(--primary);
     padding: 20px;
 }
 
 label {
-    color: white;
+    color: var(--light);
     font-size: 17px;
 }
 
@@ -50,17 +61,17 @@ label {
     border: none;
     border-radius: 17px;
     padding-left: 7px;
-    color: blue;
+    color: var(--primary);
 
 
 }
 
 span {
-    color: white;
+    color: var(--light);
     font-size: 17px;
 }
 
 a {
     float: right;
-    background-color: black;
+    background-color: var(--dark);
 }
