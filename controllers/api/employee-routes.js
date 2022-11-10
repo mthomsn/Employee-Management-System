@@ -85,12 +85,11 @@ router.post('/add', async (req, res) => { // URL is /api/employee/add
   // create a new employee using Employee model
   try {
     const employeeData = await Employee.create({
-      name: req.body.name,
-      start_date: req.body.start_date,
-      salary: req.body.salary,
-      role_id: req.body.role_id,
-      title: req.body.title,
-      currently_employed: true,
+      name: req.body.employeeName,
+      // start_date: req.body.start_date,
+      salary: req.body.employeeSalary,
+      title: req.body.employeeRole,
+      // currently_employed: true,
     });
     res.status(200).json(employeeData);
     return;
