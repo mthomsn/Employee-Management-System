@@ -1,5 +1,5 @@
 const sequelize = require('../config/connection');
-const { Roles, Employee } = require('../models');
+const { Roles, Employee, Leave } = require('../models');
 
 // const roleData = require('./roles.json');
 // const employeeData = require('./employee.json');
@@ -7,27 +7,27 @@ const { Roles, Employee } = require('../models');
 const roleData = [
   {
     "id": 1,
-    "title": "Senior Engineer",
+    "title": "Senior Staff Engineer",
     "salary": 100000.00
   },
   {
     "id": 2,
-    "title": "Mid Engineer",
+    "title": "Senior Engineer",
     "salary": 100000.00
   },
   {
     "id": 3,
-    "title": "Junior Engineer",
+    "title": "Mid-level Engineer",
     "salary": 100000.00
   },
   {
     "id": 4,
-    "title": "Marketing",
+    "title": "Junior Engineer",
     "salary": 100000.00
   },
   {
     "id": 5,
-    "title": "Finance",
+    "title": "Technician",
     "salary": 100000.00
   },
   {
@@ -35,7 +35,7 @@ const roleData = [
     "title": "Project Manager",
     "salary": 100000.00
   }
-]
+];
 
 const employeeData = [
   {
@@ -68,10 +68,39 @@ const employeeData = [
     "start_date": "11/6/2022",
     "role_id": 6
   }
+];
+
+const leaveData = [
+  {
+    "leave_balance": 40,
+    "employee_id": 1
+  },
+  {
+    "leave_balance": 40,
+    "employee_id": 2
+  },
+  {
+    "leave_balance": 40,
+    "employee_id": 3
+  },
+  {
+    "leave_balance": 40,
+    "employee_id": 4
+  },
+  {
+    "leave_balance": 40,
+    "employee_id": 5
+  },
+  {
+    "leave_balance": 40,
+    "employee_id": 6
+  }
 ]
 
 const seedRoles = () => Roles.bulkCreate(roleData);
 const seedEmployees = () => Employee.bulkCreate(employeeData);
+const seedLeaves = () => Leave.bulkCreate(leaveData);
 
 seedRoles();
 seedEmployees();
+seedLeaves();
