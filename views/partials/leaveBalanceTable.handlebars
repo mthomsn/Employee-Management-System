@@ -16,10 +16,10 @@
                {{#each employees}}
                <tr>
                   <td>{{id}}</td>
-                  <td>{{first_name}}</td>
-                   <td>{{last_name}}</td>
-                  <td>{{department}}</td>
-                  <td>{{Leave.leave_balance}}</td>
+                  <td>{{name}}</td>
+                   {{!-- <td>{{last_name}}</td> --}}
+                  <td>{{title}}</td>
+                  <td>{{leave_balance}}</td>
                </tr>
                {{else}}
                <p>No employees to display</p>
