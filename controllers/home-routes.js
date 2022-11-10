@@ -1,55 +1,88 @@
 const router = require('express').Router();
+const { Employee, User, Roles, Leave } = require('../models');
+const withAuth = require('../utils/auth');
 
-// IMPORT MODELS
-const { Employee, Role, Leave, User } = require('../models');
+router.get('/dashboard', async (req, res) => {
+  try {
+    // Get all projects and JOIN with user data
+    const employeeData = await Employee.findAll({
+      include: [
+        {
+          model: Leave,
+          attributes: ['leave_balance'],
+        },
+        {model: Roles,
+          attributes: ['title']
+        }
+      ],
+    });
 
-// GET login page
-router.get('/login', (req, res) => { // URL is /login
+    // Serialize data so the template can read it
+    const employees = employeeData.map((employee) => employee.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('dashboard', { 
+      employees, 
+      logged_in: req.session.logged_in 
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+router.get(`/employee/:id`, async (req, res) => {
+  try {
+    const employeeData = await Employee.findByPk(req.params.id, {
+      include: [
+        {
+          model: Roles,
+          attributes: ['title', 'salary'],
+        },
+        {
+          model: Leave,
+          attributes: ['leave_balance'],
+        }
+      ],
+    });
+
+    const employee = employeeData.get({ plain: true });
+
+    res.render('employee', {
+      ...employee,
+      logged_in: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
+// Use withAuth middleware to prevent access to route
+// router.get('/dashboard', withAuth, async (req, res) => {
+//   try {
+//     // Find the logged in user based on the session ID
+//     const userData = await User.findByPk(req.session.user_id, {
+//       attributes: { exclude: ['password'] },
+//       include: [{ model: Employee }],
+//     });
+
+//     const user = userData.get({ plain: true });
+
+//     res.render('dashboard', {
+//       ...user,
+//       logged_in: true
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
+
+router.get('/', (req, res) => { // URL is /
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
   }
   res.render('login');
 });
 
-// GET all for homepage
-router.get('/', async (req, res) => { // URL is /
-  // What data do we need to send to the homepage?
-  // 1. All employees
-  // 2. All roles
-  // 3. All leave balances
-
-
-  try {
-  //   const employeeData = await Employee.findAll({
-  //     include: [
-  //       {
-  //         model: Roles,
-
-  //       },
-  //       {
-  //         model: Leave,
-
-  //       },
-  //     ],
-  //   });
-  //   const employees = employeeData.map((employee) => employee.get({ plain: true }));
-
-  //   const roleData = await Roles.findAll(); // Do we need to pull in the role data?
-  //   const roles = roleData.map((roles) => roles.get({ plain: true }));
-
-  //   const leaveData = await Leave.findAll(); // Do we need to pull in the leave data?
-  //   const leaves = leaveData.map((leave) => leave.get({ plain: true }));
-
-    res.render('login', { // Get with Mark/Sarah to confirm template info
-
-
-      loggedIn: req.session.loggedIn,
-    });
-  }
-  catch(err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

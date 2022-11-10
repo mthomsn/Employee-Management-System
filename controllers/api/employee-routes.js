@@ -2,19 +2,18 @@ const router = require('express').Router();
 const { Employee, Roles, Leave } = require('../../models');
 
 // current URL is /api/employee
-
 // GET all employees
-router.get('/', async (req, res) => { // URL is /api/employee
+router.get('/', async (req, res) => {
   try {
     // Get all employees and JOIN with their role and pto balance
     const employeeData = await Employee.findAll({
       include: [
         {
-          model: Roles, // Get with Sarah to confirm model info
+          model: Roles,
           attributes: ['title'],
         },
         {
-          model: Leave, // Get with Sarah to confirm model info
+          model: Leave,
           attributes: ['leave_balance'],
         },
       ],
@@ -34,7 +33,7 @@ router.get('/', async (req, res) => { // URL is /api/employee
 });
 
 // GET employee by id
-router.get('employee/:id', async (req, res) => { // URL is /api/employee/:id
+router.get('/:id', async (req, res) => { // URL is /api/employee/:id
   try {
     const employeeData = await Employee.findByPk(req.params.id, {
       include: [
@@ -70,7 +69,7 @@ router.put('/:id', async (req, res) => { // URL is /api/employee/:id
     });
 
     if (!employeeData[0]) {
-      res.status(404).json({ message: 'No employee found with this id!' });
+      res.status(404).json({ message: 'Unable to update employee!' });
       return;
     }
 
@@ -86,8 +85,7 @@ router.post('/add', async (req, res) => { // URL is /api/employee/add
   // create a new employee using Employee model
   try {
     const employeeData = await Employee.create({
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
+      name: req.body.name,
       start_date: req.body.start_date,
       salary: req.body.salary,
       role_id: req.body.role_id,
@@ -95,6 +93,7 @@ router.post('/add', async (req, res) => { // URL is /api/employee/add
       currently_employed: true,
     });
     res.status(200).json(employeeData);
+    return;
   }
   catch(err) {
     res.status(400).json(err);
@@ -103,7 +102,7 @@ router.post('/add', async (req, res) => { // URL is /api/employee/add
 
 // DELETE employee
 // Possibly just archive employee instead?
-router.delete('/employee/edit/:id', async (req, res) => { // URL is /api/employee/:id
+router.delete('/:id', async (req, res) => { // URL is /api/employee/:id
   try {
     // Archive employee
     const employeeArchive = await Employee.findByPk(req.params.id);
@@ -127,21 +126,21 @@ router.delete('/employee/edit/:id', async (req, res) => { // URL is /api/employe
   }
 });
 
-// POST create leave request
-router.post('/leave', async (req, res) => { // URL is /api/employee/leave
-  try {
-    const leaveData = await Leave.create({ // Do we need to add this to the model?
-      leave_type: req.body.leave_type,
-      start_date: req.body.start_date,
-      end_date: req.body.end_date,
-      reason: req.body.reason,
-    });
+// POST create leave request - moving this to dashboard for testing
+// router.post('/leave', async (req, res) => { // URL is /api/employee/leave
+//   try {
+//     const leaveData = await Leave.create({ // Do we need to add this to the model?
+//       leave_type: req.body.leave_type,
+//       start_date: req.body.start_date,
+//       end_date: req.body.end_date,
+//       reason: req.body.reason,
+//     });
 
-    res.status(200).json(leaveData);
-  } 
-  catch(err) {
-    res.status(400).json(err);
-  }
-});
+//     res.status(200).json(leaveData);
+//   } 
+//   catch(err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 module.exports = router;
