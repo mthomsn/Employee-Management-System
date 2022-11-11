@@ -1,67 +1,68 @@
 <section class="container-fluid my-5">
-<header class="text-center"><h2>Process Leave Request</h2></header>
+   <header class="text-center">
+      <h2>Process Leave Request</h2>
+   </header>
 
    <h5>Apply Leave</h5>
-<form class="new-leave-request-form">
-   <div class="input-group my-3">
-      <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Employee ID</label>
-  </div>
-      <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>
-         <option value="1" id="employeeId">1</option>
-         <option value="2" id="employeeId">2</option>
-         <option value="3" id="employeeId">3</option>
-         <option value="4" id="employeeId">4</option>
-      </select>
-   </div>
-  <div class="input-group my-3">
-      <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Leave Type</label>
-  </div>
-      <select class="custom-select" id="leave-type">
-         <option selected>Choose...</option>
-         <option value="1" id="">Vacation</option>
-         <option value="1" id="">Vacation (unpaid)</option>
-         <option value="1" id="">Holiday</option>
-         <option value="1" id="">Sick (self)</option>
-         <option value="1" id="">Sick (family)</option>
-         <option value="1" id="">Bereavement</option>
-      </select>
-   </div>
-
-  <div class="input-group my-3 ">
-      <div class="input-group date" data-provide="datepicker">
-         <div class="input-group- mr-3">
-            <label class="input-group-text mb-1" for="inputGroupSelect01">From</label>
+   <form class="new-leave-request-form">
+      <div class="input-group my-3">
+         <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Employee ID</label>
          </div>
-         <span class="glyphicon glyphicon-th">
-            <input id="start-date" name="datepickerfrom" width="450" type="date" required />
-         </span>
+         <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1" id="employeeId">123456</option>
+         </select>
       </div>
-   </div>
-
-   <div class="input-group my-3 ">
-      <div class="input-group date" data-provide="datepicker">
-         <div class="input-group- mr-3">
-            <label class="input-group-text mb-1" for="inputGroupSelect01">To</label>
+      <div class="input-group my-3">
+         <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Leave Type</label>
          </div>
-         <span class="glyphicon glyphicon-th">
-            <input id="end-date" name="datepickerfrom" width="450" type="date" required />
-         </span>
+         <select class="custom-select" id="leave-type">
+            <option selected>Choose...</option>
+            <option value="1" id="">Vacation</option>
+            <option value="1" id="">Vacation (unpaid)</option>
+            <option value="1" id="">Holiday</option>
+            <option value="1" id="">Sick (self)</option>
+            <option value="1" id="">Sick (family)</option>
+            <option value="1" id="">Bereavement</option>
+         </select>
       </div>
-   </div>
-   <div class="input-group">
-      <div class="input-group-prepend">
-        <span class="input-group-text">Reason for Leave</span>
+
+      <div class="input-group my-3 ">
+         <div class="input-group date" data-provide="datepicker">
+            <div class="input-group- mr-3">
+               <label class="input-group-text mb-1" for="inputGroupSelect01">From</label>
+            </div>
+            <span class="glyphicon glyphicon-th">
+               <input id="start-date" name="datepickerfrom" width="450" type="date" required />
+            </span>
+         </div>
+      </div>
+
+      <div class="input-group my-3 ">
+         <div class="input-group date" data-provide="datepicker">
+            <div class="input-group- mr-3">
+               <label class="input-group-text mb-1" for="inputGroupSelect01">To</label>
+            </div>
+            <span class="glyphicon glyphicon-th">
+               <input id="end-date" name="datepickerfrom" width="450" type="date" required />
+            </span>
+         </div>
+      </div>
+      <div class="input-group">
+         <div class="input-group-prepend">
+            <span class="input-group-text">Reason for Leave</span>
+         </div>
+         <textarea class="form-control" aria-label="With textarea" id="reason"></textarea>
       </div>
       <textarea class="form-control" aria-label="With textarea" id="reason"></textarea>
-    </div>
-   <div class="action-button-container my-5" style="width: 800px;">
-      <button type="button" class="btn btn-success" id="new-leave-request-button">Apply Leave</button>
-      <button type="button" class="btn btn" id="reset-form-button">Reset</button><p></p><p></p>
-   </div>
-</form>
+      </div>
+      <div class="action-button-container my-5" style="width: 800px;">
+         <button type="button" class="btn btn-success" id="new-leave-request-button">Apply Leave</button>
+         <button type="button" class="btn btn" id="reset-form-button">Reset</button>
+      </div>
+   </form>
 
-<script src="/js/leave-request.js"></script>
+   <script src="./js/leave-request.js"></script>
 </section>

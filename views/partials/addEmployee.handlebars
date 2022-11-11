@@ -1,43 +1,45 @@
 <section class="container-fluid my-5">
-<header class="text-center"><h2>Employee Details</h2></header>
- 
- <h5>Add Employee</h5>
- <form class="add-employee">
-   <div class="input-group my-3">
-      <div class="input-group-prepend">
-         <span class="input-group-text" id="inputGroup-sizing-default">Employee Name</span>
+   <header class="text-center">
+      <h2>Employee Details</h2>
+   </header>
+
+   <h5>Add Employee</h5>
+   <form class="add-employee">
+      <div class="input-group my-3">
+         <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Employee Name</span>
+         </div>
+         <input type="text" class="form-control" id="employee-name" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default" placeholder="First & Last Name">
       </div>
-      <input type="text" class="form-control" id="employee-name" aria-label="Default"
-         aria-describedby="inputGroup-sizing-default" placeholder="First & Last Name">
-   </div>
-   <div class="input-group my-3">
-      <div class="input-group-prepend">
-         <span class="input-group-text">Employee Salary $</span>
-              </div>
-      <input type="text" class="form-control" id="employee-salary" aria-label="Amount (to the nearest dollar)">
-   </div>
-   <div class="input-group my-3">
-      <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Employee Role</label>
+      <div class="input-group my-3">
+         <div class="input-group-prepend">
+            <span class="input-group-text">Employee Salary $</span>
+         </div>
+         <input type="text" class="form-control" id="employee-salary" aria-label="Amount (to the nearest dollar)">
       </div>
-      <select class="custom-select" id="role-option">
-         <option selected id="">Choose...</option>
-         <option value="1 Senior Staff Engineer" id="1">1 Senior Staff Engineer</option>
-         <option value="2 Senior Engineer" id="2">2 Senior Engineer</option>
-         <option value="3 Mid-level Engineer" id="3">3 Mid-level Engineer</option>
-         <option value="4 Junior Engineer" id="4">4 Junior Engineer</option>
-         <option value="5 Technician" id="5">5 Technician</option>
-         <option value="6 Project Manager" id="6">6 Project Manager</option>
-      </select>
-   </div>
-   {{!-- <div class="input-group my-3 ">
-       <div class="input-group-prepend">
-         <span class="input-group-text" id="inputGroup-sizing-default">Start Date</span>
+      <div class="input-group my-3">
+         <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Employee Role</label>
+         </div>
+         <select class="custom-select" id="role-option">
+            <option selected id="">Choose...</option>
+            <option value="1 Senior Staff Engineer" id="1">1 Senior Staff Engineer</option>
+            <option value="2 Senior Engineer" id="2">2 Senior Engineer</option>
+            <option value="3 Mid-level Engineer" id="3">3 Mid-level Engineer</option>
+            <option value="4 Junior Engineer" id="4">4 Junior Engineer</option>
+            <option value="5 Technician" id="5">5 Technician</option>
+            <option value="6 Project Manager" id="6">6 Project Manager</option>
+         </select>
       </div>
-      <input type="date" class="form-control" id="start-date" aria-label="Default"
-         aria-describedby="inputGroup-sizing-default" placeholder="mm/dd/yyyy">
-   </div> --}}
-     {{!-- <div class="input-group date" data-provide="datepicker">
+      {{!-- <div class="input-group my-3 ">
+         <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">Start Date</span>
+         </div>
+         <input type="date" class="form-control" id="start-date" aria-label="Default"
+            aria-describedby="inputGroup-sizing-default" placeholder="mm/dd/yyyy">
+      </div> --}}
+      {{!-- <div class="input-group date" data-provide="datepicker">
          <div class="input-group- mr-3">
             <label class="input-group-text mb-1" for="inputGroupSelect01">Employee Start Date</label>
          </div>
@@ -46,12 +48,12 @@
             <input id="start-date" name="datepickerfrom" width="450" type="date" required />
          </span>
       </div> --}}
-   
-   <div class="action-button-container my-5" style="width: 800px;">
-      <button type="button" class="btn btn-dark" id="save-employee-button">Save Employee Data</button>
-      <button type="button" class="btn btn-danger" id="delete-employee-button">Delete Employee</button>
-   </div>
-</form>
 
-<script src="/js/add-employee.js"></script>
+      <div class="action-button-container my-5" style="width: 800px;">
+         <button type="button" class="btn btn-dark" id="save-employee-button">Save Employee Data</button>
+         <button type="button" class="btn btn-danger" id="delete-employee-button">Delete Employee</button>
+      </div>
+   </form>
+
+   <script src="/js/add-employee.js"></script>
 </section>

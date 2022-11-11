@@ -1,14 +1,13 @@
 <div class="employees list-group">
   {{#each employees}}
-    <a href="/api/employee/{{id}}" class="text-decoration-none text-dark list-item flex-row justify-space-evenly">
-      <span>Employee Name: {{name}}</span></a>
-      <span>Employee ID: {{id}}</span>
-      <span>Employee Title: {{title}}</span>
-      <span>Employee Salary: {{role.[0].salary}}</span>
-      <span>Leave Balance: {{leave.[0].leave_balance}}</span>
-      {{!-- <span>Start Date: {{start_date}}</span>  --}}
-      
-      {{!-- <span>Currently Employed? {{#if true}}Yes{{else}}No{{/if}}</span> --}}
-   
+  <a href="/api/employee/{{id}}" class="list-item flex-row justify-space-between">
+    <span>{{id}}</span>
+    <span>{{first_name}} {{last_name}}</span>
+    <span>{{title}}</span>
+    <span>{{Role.salary}}</span>
+    <span>{{Leave.leave_balance}}</span>
+    <span>Start Date: {{start_date}}</span>
+    <span>Currently Employed? {{#if true}}Yes{{else}}No{{/if}}</span>
+  </a>
   {{/each}}
 </div>

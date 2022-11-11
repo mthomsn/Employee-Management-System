@@ -4,7 +4,7 @@
 }
 
 :root {
-    --primary: rgb(215, 210, 54);
+    --primary: blue;
     --secondary: silver;
     --tertiary: gray;
     --quantrinary: #5e877f;
@@ -14,28 +14,44 @@
     --border-radius: 0.3rem;
 }
 
-.navbar {
-    float: left;
+.hero {
+    text-align: center;
+    background-color: var(--dark);
 }
 
-ul {
-    list-style-type: none;
-    background-color: var(--quantrinary);
+ul  {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    align-items: center;
+    float: left;
+    padding: 5px;
 }
+
+li {
+    padding: 5px;
+}
+
+.col-auto, .form-horizontal {
+    background-color: var(--secondary);
+}
+
 
 body {
     margin: 0;
     padding: 0;
-    background-color: var(--light);
+    background-color: var(--secondary);
     font-family: 'Dosis';
 }
 
 
 footer {
     position: absolute; 
-    background-color: var(--quantrinary);
+    background-color: var(--dark);
     width: 100%;
     height: 50px;
+    float: right;
+    padding: 3px;
 }
 
 .login {
@@ -48,6 +64,7 @@ footer {
     border-radius: 15px;
 
 }
+
 
 header {
     background-color: var(--quantrinary);
