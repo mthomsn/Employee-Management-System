@@ -92,4 +92,15 @@ router.get('/login', (req, res) => { // URL is /
   res.render('login');
 });
 
+router.post('/logout', (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.render('login');
+    });
+  } else {
+    res.render('login');
+    res.status(404).end();
+  }
+});
+
 module.exports = router;

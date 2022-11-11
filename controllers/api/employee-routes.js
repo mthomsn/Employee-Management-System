@@ -41,12 +41,12 @@ router.get('/:id', async (req, res) => { // URL is /api/employee/:id
       include: [
         {
           model: Roles,
-          attributes: ['title', 'salary'],
+          as: 'Roles',
           required: true,
         },
         {
           model: Leave,
-          attributes: ['leave_balance'],
+          as: 'Balance',
           required: true,
         },
       ],
@@ -61,7 +61,7 @@ router.get('/:id', async (req, res) => { // URL is /api/employee/:id
   catch(err) {
     res.status(500).json(err);
   }
-});
+})
 
 // PUT update employee
 router.put('/:id', async (req, res) => { // URL is /api/employee/:id
@@ -89,9 +89,9 @@ router.post('/add', async (req, res) => { // URL is /api/employee/add
   // create a new employee using Employee model
   try {
     const employeeData = await Employee.create({
-      name: req.body.employeeName,
-      salary: req.body.employeeSalary,
-      title: req.body.employeeRole,
+    where: {  name: req.body.employeeName,
+      role_id: req.body.employeeRoleId,
+    }
     });
     res.status(200).json(employeeData);
     return;

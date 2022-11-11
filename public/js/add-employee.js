@@ -10,18 +10,17 @@ const newFormHandler = async (event) => {
    const employeeRoleEl = roleEl.split(" ");
    const employeeRoleId = employeeRoleEl.shift();
    const employeeRole = employeeRoleEl.join(" ");
+
   console.log(employeeRoleId)
    console.log(employeeRole);
-  //  const startDate = $('#start-date').datepicker("getDate")
 
-   if (employeeName && employeeSalary && employeeRoleId) {
-     const response = await fetch('/api/employee/add', {
+   if (employeeName && employeeRoleId) {
+     const response = await fetch('./api/employee/add', {
        method: 'POST',
        body: ({ 
         employeeName, 
-        employeeSalary, 
         employeeRoleId, 
-        //  startDate 
+
       }),
        headers: {
          'Content-Type': 'text/plain',
