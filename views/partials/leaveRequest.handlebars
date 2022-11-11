@@ -1,31 +1,33 @@
 <section class="container-fluid my-5">
-<header class="text-center"><h2>Process Leave Request</h2></header>
+   <header class="text-center">
+      <h2>Process Leave Request</h2>
+   </header>
 
    <h5>Apply Leave</h5>
-<form class="new-leave-request-form">
-   <div class="input-group my-3">
-      <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Employee ID</label>
-    </div>
-      <select class="custom-select" id="inputGroupSelect01">
-         <option selected>Choose...</option>
-         <option value="1" id="employeeId">123456</option>
-      </select>
-   </div>
-  <div class="input-group my-3">
-      <div class="input-group-prepend">
-         <label class="input-group-text" for="inputGroupSelect01">Leave Type</label>
-  </div>
-      <select class="custom-select" id="leave-type">
-         <option selected>Choose...</option>
-         <option value="1" id="">Vacation</option>
-         <option value="1" id="">Vacation (unpaid)</option>
-         <option value="1" id="">Holiday</option>
-         <option value="1" id="">Sick (self)</option>
-         <option value="1" id="">Sick (family)</option>
-         <option value="1" id="">Bereavement</option>
-      </select>
-   </div>
+   <form class="new-leave-request-form">
+      <div class="input-group my-3">
+         <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Employee ID</label>
+         </div>
+         <select class="custom-select" id="inputGroupSelect01">
+            <option selected>Choose...</option>
+            <option value="1" id="employeeId">123456</option>
+         </select>
+      </div>
+      <div class="input-group my-3">
+         <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Leave Type</label>
+         </div>
+         <select class="custom-select" id="leave-type">
+            <option selected>Choose...</option>
+            <option value="1" id="">Vacation</option>
+            <option value="1" id="">Vacation (unpaid)</option>
+            <option value="1" id="">Holiday</option>
+            <option value="1" id="">Sick (self)</option>
+            <option value="1" id="">Sick (family)</option>
+            <option value="1" id="">Bereavement</option>
+         </select>
+      </div>
 
       <div class="input-group my-3 ">
          <div class="input-group date" data-provide="datepicker">
@@ -55,12 +57,12 @@
          <textarea class="form-control" aria-label="With textarea" id="reason"></textarea>
       </div>
       <textarea class="form-control" aria-label="With textarea" id="reason"></textarea>
-       </div>
-   <div class="action-button-container my-5" style="width: 800px;">
-      <button type="button" class="btn btn-success" id="new-leave-request-button">Apply Leave</button>
-      <button type="button" class="btn btn" id="reset-form-button">Reset</button>
-   </div>
-</form>
+      </div>
+      <div class="action-button-container my-5" style="width: 800px;">
+         <button type="button" class="btn btn-success" id="new-leave-request-button">Apply Leave</button>
+         <button type="button" class="btn btn" id="reset-form-button">Reset</button>
+      </div>
+   </form>
 
    <script src="./js/leave-request.js"></script>
 </section>

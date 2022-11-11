@@ -1,34 +1,36 @@
 <section class="container-fluid my-5">
-<div class="card">
-   <div class="card-body">
-<header class="text-center mt-3 mb-5"><h2>Employee Time Off Balance</h2></header>
-      <div class="row">
-         <table>
-            <thead>
-               <tr>
-                  <th>Employee ID</th>
-                  <th>Name</th>
-                  <th>Role</th>
-                  <th>Time Off Balance</th>
-               </tr>
-            </thead>
-            <tbody>
-               {{#if employees}}
-               {{#each employees}}
-               <tr>
-                  <td>{{id}}</td>
-                  <td>{{first_name}}</td>
-                  <td>{{last_name}}</td>
-                  <td>{{department}}</td>
-                  <td>{{Leave.leave_balance}}</td>
-               </tr>
-                {{else}}
-               <p>No employees to display</p>
-               {{/each}}
-               {{/if}}
-            </tbody>
-         </table>
+   <div class="card">
+      <div class="card-body">
+         <header class="text-center mt-3 mb-5">
+            <h2>Employee Time Off Balance</h2>
+         </header>
+         <div class="row">
+            <table>
+               <thead>
+                  <tr>
+                     <th>Employee ID</th>
+                     <th>Name</th>
+                     <th>Role</th>
+                     <th>Time Off Balance</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {{#if employees}}
+                  {{#each employees}}
+                  <tr>
+                     <td>{{id}}</td>
+                     <td>{{first_name}}</td>
+                     <td>{{last_name}}</td>
+                     <td>{{department}}</td>
+                     <td>{{Leave.leave_balance}}</td>
+                  </tr>
+                  {{else}}
+                  <p>No employees to display</p>
+                  {{/each}}
+                  {{/if}}
+               </tbody>
+            </table>
+         </div>
       </div>
    </div>
-</div>
 </section>
