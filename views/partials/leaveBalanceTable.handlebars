@@ -1,27 +1,30 @@
+<section class="container-fluid my-5">
 <div class="card">
    <div class="card-body">
-      <h1>Employees Time Off Balance</h1>
+<header class="text-center mt-3 mb-5"><h2>Employee Time Off Balance</h2></header>
       <div class="row">
          <table>
             <thead>
                <tr>
                   <th>Employee ID</th>
                   <th>Name</th>
-                  <th>Department</th>
+                  <th>Role</th>
                   <th>Time Off Balance</th>
                </tr>
             </thead>
             <tbody>
+               <script> const data = {{employees}}.value;
+                  const config = {singleLine: true};
+                  console.log(table(data, config));</script>
                {{#if employees}}
                {{#each employees}}
                <tr>
                   <td>{{id}}</td>
                   <td>{{name}}</td>
-                   {{!-- <td>{{last_name}}</td> --}}
-                  <td>{{title}}</td>
-                  <td>{{leave_balance}}</td>
+                  <td>{{employees.title}}</td>
+                  <td>{{this.leave_balance}}</td> 
                </tr>
-               {{else}}
+                {{else}}
                <p>No employees to display</p>
                {{/each}}
                {{/if}}
@@ -30,3 +33,4 @@
       </div>
    </div>
 </div>
+</section>
