@@ -24,19 +24,12 @@
             <a href="#employee-add" class="nav-link text-decoration-none text-dark" data-bs-toggle="tab">Add Employee</a>
         </li>
         <li class="nav-item">
-            <a href="/users/logout" class="nav-link text-decoration-none text-dark" id="logout">Log Out</a>
+            <a href="/login" class="nav-link text-decoration-none text-dark" id="logout">Log Out</a>
         </li>
-        {{else}}
-           </li>
-           <li class="nav-item">
-            <a href="/login" class="nav-link text-decoration-none text-dark">Log In</a>
-        </li>
-        {{/if}}
     </ul>
-</div>
-    <div class="tab-content">
+      <div class="tab-content">
         <div class="tab-pane fade show active" id="home">
-            <h4 class="mx-4">Welcome to the Manager dashboard, {{ user.username }}!</h4>
+            <h4 class="mx-4">Welcome to the Manager dashboard!</h4>
             {{> leaveBalanceTable }}
         </div>
         <div class="tab-pane fade" id="employee-list">
@@ -49,7 +42,15 @@
             {{> addEmployee}}
         </div>
     </div>
+        {{else}}
+           </li>
+           <li class="nav-item">
+            <a href="/login" class="nav-link text-decoration-none text-dark">Log In</a>
+        </li>
+    </ul>
+      {{/if}}
+</div>     
+
 </body>
   <script src="/js/logout.js"></script>
- 
   </html>
