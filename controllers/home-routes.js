@@ -84,5 +84,12 @@ router.get('/', (req, res) => { // URL is /
   res.render('login');
 });
 
+router.get('/login', (req, res) => { // URL is /
+  if (req.session.loggedIn) {
+    res.render('/');
+    return;
+  };
+  res.render('login');
+});
 
 module.exports = router;

@@ -10,11 +10,13 @@ router.get('/', async (req, res) => {
       include: [
         {
           model: Roles,
-          attributes: ['title'],
+          attributes: ['title', 'salary'],
+          required: true,
         },
         {
           model: Leave,
           attributes: ['leave_balance'],
+          required: true,
         },
       ],
     });
@@ -39,11 +41,13 @@ router.get('/:id', async (req, res) => { // URL is /api/employee/:id
       include: [
         {
           model: Roles,
-          attributes: ['title'],
+          attributes: ['title', 'salary'],
+          required: true,
         },
         {
           model: Leave,
           attributes: ['leave_balance'],
+          required: true,
         },
       ],
     });
@@ -86,10 +90,8 @@ router.post('/add', async (req, res) => { // URL is /api/employee/add
   try {
     const employeeData = await Employee.create({
       name: req.body.employeeName,
-      // start_date: req.body.start_date,
       salary: req.body.employeeSalary,
       title: req.body.employeeRole,
-      // currently_employed: true,
     });
     res.status(200).json(employeeData);
     return;
