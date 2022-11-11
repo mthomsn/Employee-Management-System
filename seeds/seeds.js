@@ -54,7 +54,7 @@ const employeeData = [
     "role_id": 3
   },
   {
-    "name": "Neign Namiranian",
+    "name": "Negin Namiranian",
     "start_date": "11/4/2022",
     "role_id": 4
   },

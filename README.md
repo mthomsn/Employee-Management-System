@@ -16,9 +16,10 @@
   ## Table of Contents
   1. [Project Description](#Description)
   2. [Installation](#Installation)
-  3. [Contribution Guidelines](#Contributing)
-  4. [Challenges Encounted](#Challenges)
-  5. [License](#License)
+  3. [Usage](#Usage)
+  4. [Contribution Guidelines](#Contributing)
+  5. [Challenges Encounted](#Challenges)
+  6. [License](#License)
   <br>
   
   ## Description
@@ -32,8 +33,18 @@
    ```
 
   ## Installation
+  You can also clone the [GitHub Repository](https://github.com/mthomsn/Employee-Management-System) and install the following node packages:
 
   ```npm i express sequelize mysql2 dotenv @tabler/icons connect-session-sequelize express-handlebars```
+
+  ## Usage
+  [Visit our Website](https://fathomless-earth-46327.herokuapp.com/) and signup.
+
+  ![login-page](/public/images/login-sign-up.png)
+
+  Once signed up, you will be directed to the dashboard, where you will get an overview of your current employees and some helpful data, such as their ID, role, and current Time Off Balance.
+
+  ![dashboard](/public/images/dashboard.png)
 
   ## Contributing
 
@@ -41,16 +52,14 @@
  
   ## Challenges
  
-Getting routes to work smoothly with event listeners proved to be the biggest challenge. In the end, we only successfully routed login (get), signup form (get and post) and pull from Employee table and render to Employees tab.  
+  Getting routes to work smoothly with event listeners proved to be the biggest challenge. In the end, we only successfully routed login (get), signup form (get and post) and pull from Employee table and render to Employees tab.  
 
-Configuring queries to render appropriately within views was also a struggle. Since our program relies on one window with href tags, it required pulling all data in one swoop and distributing with partials. In the end, joining tables proved to be too complicated to render at the time of presentation. 
+  Configuring queries to render appropriately within views was also a struggle. Since our program relies on one window with href tags, it required pulling all data in one swoop and distributing with partials. In the end, joining tables proved to be too complicated to render at the time of presentation. 
 
-Overall organization of the controllers directory was a challenge early on and required a complete reconfiguration on day 2, which pushed us back on time significantly. 
+  Overall organization of the controllers directory was a challenge early on and required a complete reconfiguration on day 2, which pushed us back on time significantly. 
 
-Team challenges were signficant, as well. We were only able to spend a few hours total as a team of 3 throughout the week, which meant a lot of time working alone or as a pair on the most challenging concepts.
-
-
- 
+  Team challenges were signficant, as well. We were only able to spend a few hours total as a team of 3 throughout the week, which meant a lot of time working alone or as a pair on the most challenging concepts.
+  
   ## License
 
   Click the badge to learn more about the license used for this project.
