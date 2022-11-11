@@ -13,11 +13,11 @@ Leave.belongsTo(Employee, {
  });
 
  Employee.hasOne(Roles, {
-  foreignKey: 'id'
+  foreignKey: 'roles_id'
  }); 
  
  Roles.hasMany(Employee, {
-  foreignKey: 'employee_id'
+  foreignKey: 'roles_id'
  }); 
 
 module.exports = { Employee, Roles, Leave, User};

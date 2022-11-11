@@ -17,14 +17,14 @@ const newFormHandler = async (event) => {
    if (employeeName && employeeSalary && employeeRoleId) {
      const response = await fetch('/api/employee/add', {
        method: 'POST',
-       body: JSON.stringify({ 
-         employeeName, 
-         employeeSalary, 
-         employeeRoleId, 
+       body: ({ 
+        employeeName, 
+        employeeSalary, 
+        employeeRoleId, 
         //  startDate 
       }),
        headers: {
-         'Content-Type': 'application/json',
+         'Content-Type': 'text/plain',
        },
      });
  

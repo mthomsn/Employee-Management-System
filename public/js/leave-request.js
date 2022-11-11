@@ -6,12 +6,11 @@ const newLeaveRequest = async (event) => {
   const leave_type = document.querySelector('#leave-type').value.trim();
   const start_date = document.querySelector('#start-date').value.trim();
   const end_date = document.querySelector('#end-date').value.trim();
-  const reason = document.querySelector('#reason').value.trim();
 
-  if (employeeID && leave_type && start_date && end_date && reason) {
+  if (employeeID && leave_type && start_date && end_date) {
     const response = await fetch(`/dashboard`, {
       method: 'POST',
-      body: JSON.stringify({ employeeID, leave_type, start_date, end_date, reason }),
+      body: JSON.stringify({ employeeID, leave_type, start_date, end_date}),
       headers: { 'Content-Type': 'application/json' },
     });
 
