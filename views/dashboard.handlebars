@@ -8,47 +8,44 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-<div class="m-4">
+<div class="my-4">
     <ul class="nav nav-tabs" id="myTab">
         <li class="nav-item">
-            <a href="#home" class="nav-link active" data-bs-toggle="tab">Home</a>
+            <a href="#home" class="nav-link active text-decoration-none text-dark" data-bs-toggle="tab">Home</a>
         </li>
            {{#if logged_in}}
         <li class="nav-item">
-            <a href="#employee-list" class="nav-link" data-bs-toggle="tab">Employees</a>
+            <a href="#employee-list" class="nav-link text-decoration-none text-dark" data-bs-toggle="tab">Employees</a>
         </li>
         <li class="nav-item">
-            <a href="#process-leave" class="nav-link" data-bs-toggle="tab">Leave Form</a>
+            <a href="#process-leave" class="nav-link text-decoration-none text-dark" data-bs-toggle="tab">Leave Form</a>
         </li>
          <li class="nav-item">
-            <a href="#employee-add" class="nav-link" data-bs-toggle="tab">Add Employee</a>
+            <a href="#employee-add" class="nav-link text-decoration-none text-dark" data-bs-toggle="tab">Add Employee</a>
         </li>
         <li class="nav-item">
-            <a href="/logout/exit" class="nav-link">Log Out</a>
+            <a href="/logout/exit" class="nav-link text-decoration-none text-dark">Log Out</a>
         </li>
         {{else}}
            </li>
            <li class="nav-item">
-            <a href="/login" class="nav-link">Log In</a>
+            <a href="/login" class="nav-link text-decoration-none text-dark">Log In</a>
         </li>
         {{/if}}
     </ul>
 </div>
     <div class="tab-content">
         <div class="tab-pane fade show active" id="home">
-            <h4 class="mt-2">Welcome to the Manager dashboard, {{ username }}!</h4>
+            <h4 class="mx-4">Welcome to the Manager dashboard, {{ user.username }}!</h4>
             {{> leaveBalanceTable }}
         </div>
         <div class="tab-pane fade" id="employee-list">
-            <h4 class="mt-2">All Employees</h4>
             {{> allEmployees}}
         </div>
         <div class="tab-pane fade" id="process-leave">
-            <h4 class="mt-2">Leave Request</h4>
             {{> leaveRequest}}
         </div>
           <div class="tab-pane fade" id="employee-add">
-            <h4 class="mt-2">Add Employee</h4>
             {{> addEmployee}}
         </div>
     </div>
