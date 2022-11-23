@@ -1,6 +1,7 @@
 # Employee Management System
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
+**[Deployed Site](https://fathomless-earth-46327.herokuapp.com/)**
 
   **Completion Date:**  11/11/22
   **Technologies used:**  Node, MySql2, Sequelize, Handlebars, Bootstrap, Tablr icons, bCrypt, Google Fonts, JavaScript, HTML, CSS, Heroku<br>
